@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- EDIT: browser tab title -->
+  <title>Roberto — Portfolio</title>
+
+  <!--
+    ============================================================
+    HOW TO ADD PDFs (your pitch decks, reports, resume):
+    1. Export PowerPoint/Keynote slides as PDF first.
+    2. Upload the PDF into the SAME repo as this file.
+       (Add file -> Upload files -> drag PDF -> Commit changes)
+    3. Use lowercase names, no spaces: resume.pdf, valuation-report.pdf
+    4. The links below already point to those names. Just match them.
+    ============================================================
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper: #F4F6F8;
+      --card: #FFFFFF;
+      --ink: #16202A;
+      --muted: #5B6877;
+      --accent: #1E5E52;        /* deep teal — calm, professional, finance-friendly */
+      --accent-soft: #E2F0EC;
+      --line: #E1E6EC;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    nav { position: sticky; top: 0; background: rgba(244,246,248,0.85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
+    nav .wrap { display: flex; justify-content: flex-end; align-items: center; height: 64px; }
+    nav .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
+    nav .links a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 15px; font-weight: 500; }
+    nav .links a:hover { color: var(--accent); }
+
+    header { padding: 88px 0 56px; }
+    .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 8vw, 68px); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+    h1 .accent { color: var(--accent); }
+    .tagline { font-size: clamp(18px, 3vw, 21px); color: var(--muted); margin-top: 20px; max-width: 540px; }
+    .cta-row { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 10px; transition: transform 0.15s ease, background 0.15s ease; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-ghost { color: var(--ink); border: 1px solid var(--line); background: var(--card); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    section { padding: 48px 0; border-top: 1px solid var(--line); }
+    .section-label { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
+    .about p { font-size: 18px; color: var(--ink); max-width: 620px; }
+    .about p + p { margin-top: 16px; }
+
+    .project { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px; margin-bottom: 16px; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .project:hover { transform: translateY(-3px); box-shadow: 0 12px 30px -12px rgba(30,94,82,0.25); }
+    .project h3 { font-family: 'Space Grotesk', sans-serif; font-size: 21px; margin-bottom: 8px; }
+    .project p { color: var(--muted); margin-bottom: 14px; }
+    .project .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 6px; }
+    .project-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .project-links a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .project-links a:hover { text-decoration: underline; }
+
+    footer { padding: 56px 0 72px; border-top: 1px solid var(--line); }
+    footer h2 { font-family: 'Space Grotesk', sans-serif; font-size: 28px; margin-bottom: 12px; }
+    footer p { color: var(--muted); margin-bottom: 20px; }
+    .contact-links a { color: var(--ink); text-decoration: none; font-weight: 600; margin-right: 20px; }
+    .contact-links a:hover { color: var(--accent); }
+
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto; } }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="wrap">
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="wrap">
+      <!-- EDIT: your field -->
+      <span class="eyebrow">Economics &amp; Finance Student</span>
+
+      <!-- EDIT: your name -->
+      <h1>Hi, I'm <span class="accent">Roberto</span></h1>
+
+      <!-- EDIT: one or two sentences -->
+      <p class="tagline">I study markets, build financial models, and turn data into clear decisions. This is a selection of my academic and project work.</p>
+
+      <div class="cta-row">
+        <!-- EDIT: your email -->
+        <a class="btn btn-primary" href="mailto:you@example.com">Get in touch</a>
+        <!-- Upload resume.pdf to your repo -->
+        <a class="btn btn-ghost" href="resume.pdf" target="_blank">View résumé (PDF)</a>
+        <!-- EDIT: your LinkedIn (more relevant than GitHub for finance) -->
+        <a class="btn btn-ghost" href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="section-label">About</div>
+      <!-- EDIT -->
+      <p>I'm an Economics &amp; Finance student at [your school]. I'm interested in [e.g. equity research, corporate finance, financial markets].</p>
+      <p>I'm currently developing skills in [e.g. financial modeling, valuation, data analysis] and looking for [e.g. a finance internship].</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-label">Selected Work</div>
+
+      <!--
+        Each project links to a PDF (your slide deck or report).
+        Copy a whole <div class="project"> block to add another.
+      -->
+
+      <div class="project">
+        <h3>Equity Valuation — [Company]</h3>
+        <p>A DCF and comparables valuation of [company], with a buy/hold/sell recommendation.</p>
+        <div class="tags">
+          <span class="tag">Valuation</span>
+          <span class="tag">DCF</span>
+          <span class="tag">Excel</span>
+        </div>
+        <div class="project-links">
+          <!-- Upload valuation-report.pdf -->
+          <a href="valuation-report.pdf" target="_blank">View report (PDF) →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Case Competition — [Name]</h3>
+        <p>Our team's strategy and financial analysis for [the case]; we placed [result].</p>
+        <div class="tags">
+          <span class="tag">Strategy</span>
+          <span class="tag">Financial Analysis</span>
+        </div>
+        <div class="project-links">
+          <!-- Upload case-competition-slides.pdf -->
+          <a href="case-competition-slides.pdf" target="_blank">View slides (PDF) →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Market Research — [Topic]</h3>
+        <p>An analysis of [an industry / economic question] using [your data and method].</p>
+        <div class="tags">
+          <span class="tag">Economics</span>
+          <span class="tag">Data Analysis</span>
+        </div>
+        <div class="project-links">
+          <!-- Upload market-research.pdf -->
+          <a href="market-research.pdf" target="_blank">View report (PDF) →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <h2>Let's connect</h2>
+      <p>I'm open to internships and opportunities in finance. The fastest way to reach me is email.</p>
+      <div class="contact-links">
+        <!-- EDIT -->
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
