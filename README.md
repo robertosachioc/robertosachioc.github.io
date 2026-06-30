@@ -1,1 +1,1 @@
-This is me 
+This is the first project I do using the help of my friend 
