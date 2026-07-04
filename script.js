@@ -4,7 +4,7 @@
   /* ---------- EDIT ME: paste your Google Apps Script Web App URL here.
      Follow the steps in contact-form-setup.md (in this repo) — takes ~5 minutes, totally free.
      While this is empty (""), the form falls back to opening the visitor's email app. ---------- */
-  const SHEET_WEBAPP_URL = "";
+  const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxzHD6EsnijgXDwR0QaO0qKX4HChiBvonhb5ICg-Mt640_5ylMtprRA3PXq8mnZsrLvlw/exec";
 
   /* ---------- Theme toggle (light/dark) ---------- */
   const root = document.documentElement;
