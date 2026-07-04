@@ -435,5 +435,24 @@
 
   .about p { font-size:17.5px; line-height:1.78; max-width:820px; }
 
-  /* Hero subline — the internship signal */
-  .hero-sub { margin:22px 0 30px; font-size:clamp(15px,1.4vw,18px); color:var(--muted); font-weight:500; letter-spacing:.01em; }
+  /* ---------- Contact success card ---------- */
+  .form-success {
+    display:flex; flex-direction:column; align-items:flex-start; gap:12px;
+    background:var(--band-field); border:1px solid var(--band-line); border-radius:14px;
+    padding:34px 30px; animation:riseIn .5s cubic-bezier(.2,.7,.3,1) both;
+  }
+  .fs-check {
+    width:52px; height:52px; border-radius:50%;
+    background:var(--band-btn); color:var(--band-btn-ink);
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px; font-weight:700;
+  }
+  .form-success h3 { font-family:'Lora',Georgia,serif; font-size:24px; font-weight:600; margin:4px 0 0; }
+  .form-success p { color:var(--band-muted); font-size:15.5px; line-height:1.6; margin:0; max-width:420px; }
+  .fs-again {
+    margin-top:10px; background:transparent; border:1.5px solid var(--band-line);
+    color:var(--band-ink); border-radius:999px; padding:10px 20px;
+    font-family:'Inter',sans-serif; font-size:14px; font-weight:600; cursor:pointer;
+    transition:border-color .2s;
+  }
+  .fs-again:hover { border-color:var(--accent); }

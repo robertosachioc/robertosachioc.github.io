@@ -56,9 +56,20 @@
       data.append('company', company); data.append('message', message);
       fetch(SHEET_WEBAPP_URL, { method:'POST', mode:'no-cors', body:data })
         .then(function(){
-          btn.textContent = 'Sent ✓'; form.reset();
-          formNote.textContent = 'Thanks! Your message has been delivered.';
-          setTimeout(function(){ btn.disabled = false; btn.textContent = 'Send message →'; }, 4000);
+          const firstName = (name || '').trim().split(' ')[0];
+          const ok = document.createElement('div');
+          ok.className = 'form-success';
+          ok.innerHTML = '<div class="fs-check">✓</div>' +
+            '<h3>Message sent' + (firstName ? ', ' + firstName : '') + '!</h3>' +
+            '<p>I\'ve received your message and will get back to you soon.</p>' +
+            '<button type="button" class="fs-again">Send another message</button>';
+          form.style.display = 'none';
+          form.parentNode.insertBefore(ok, form);
+          ok.querySelector('.fs-again').addEventListener('click', function(){
+            ok.remove(); form.reset();
+            btn.disabled = false; btn.textContent = 'Send message →';
+            form.style.display = '';
+          });
         })
         .catch(function(){
           btn.disabled = false; btn.textContent = 'Send message →';
