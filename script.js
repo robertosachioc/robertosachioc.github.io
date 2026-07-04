@@ -1,9 +1,6 @@
 (function(){
   "use strict";
 
-  /* ---------- EDIT ME: your GitHub username ---------- */
-  const GITHUB_USERNAME = "robertosachioc";
-
   /* ---------- EDIT ME: paste your Google Apps Script Web App URL here.
      Follow the steps in contact-form-setup.md (in this repo) — takes ~5 minutes, totally free.
      While this is empty (""), the form falls back to opening the visitor's email app. ---------- */
@@ -109,27 +106,34 @@
     }
   })();
 
-  /* ---------- GitHub repos ---------- */
-  const ghGrid = document.getElementById('ghGrid');
-  function repoCard(r){
-    const desc = r.description ? r.description : 'No description yet.';
-    const lang = r.language ? r.language : '—';
-    return '<a class="gh-card" href="' + r.html_url + '" target="_blank" rel="noopener">' +
-      '<span class="gh-name">' + r.name + '</span>' +
-      '<span class="gh-desc">' + desc.replace(/</g,'&lt;') + '</span>' +
-      '<span class="gh-meta"><span><span class="gh-lang-dot"></span>' + lang + '</span><span>★ ' + r.stargazers_count + '</span></span>' +
-      '</a>';
-  }
-  fetch('https://api.github.com/users/' + GITHUB_USERNAME + '/repos?sort=updated&per_page=6')
-    .then(function(res){ if(!res.ok) throw new Error('bad response'); return res.json(); })
-    .then(function(repos){
-      if (!Array.isArray(repos) || repos.length === 0) throw new Error('empty');
-      const cards = repos.filter(function(r){ return !r.fork; }).slice(0,6).map(repoCard).join('');
-      ghGrid.innerHTML = cards || '<p class="gh-empty">No public repositories yet.</p>';
-    })
-    .catch(function(){
-      ghGrid.innerHTML = '<p class="gh-empty">Couldn&#39;t load repositories — set <code>GITHUB_USERNAME</code> near the bottom of this file, or view them directly on ' +
-        '<a href="https://github.com/' + GITHUB_USERNAME + '" target="_blank" rel="noopener">GitHub</a>.</p>';
+  /* ---------- Writing shelf arrows ---------- */
+  const wTrack = document.getElementById('writingTrack');
+  if (wTrack) {
+    document.querySelectorAll('.w-arrow').forEach(function(b){
+      b.addEventListener('click', function(){
+        wTrack.scrollBy({ left: (b.classList.contains('next') ? 1 : -1) * 320, behavior: 'smooth' });
+      });
     });
+  }
+
+
+  /* ---------- Scroll progress bar ---------- */
+  const sp = document.getElementById('scrollProgress');
+  if (sp) {
+    window.addEventListener('scroll', function(){
+      const h = document.documentElement;
+      const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      sp.style.width = pct + '%';
+    }, { passive:true });
+  }
+
+
+  /* ---------- Flip cards (Where I'm headed) ---------- */
+  document.querySelectorAll('.dir-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      const on = card.classList.toggle('flipped');
+      card.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  });
 
 })();
