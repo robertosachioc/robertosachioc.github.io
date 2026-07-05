@@ -40,6 +40,10 @@ function doPost(e) {
 }
 ```
 
+> **After ANY code edit:** saving is NOT enough. You must redeploy:
+> Deploy → Manage deployments → ✏️ pencil → Version: "New version" → Deploy.
+> The URL stays the same; nothing changes on the website.
+
 3. Click the **save** icon (give the project any name).
 
 ## Step 3 — Deploy it
