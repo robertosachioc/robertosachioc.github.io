@@ -21,16 +21,24 @@ function doPost(e) {
     e.parameter.company || "",
     e.parameter.message || ""
   ]);
+
+ var visitorEmail = e.parameter.email || "";
+  if (visitorEmail) {
+    MailApp.sendEmail(
+      visitorEmail,
+      "Thanks for reaching out from Roberto Portfolio",
+      "Hi " + (e.parameter.name || "there") + ",\n\n" +
+      "Thanks for your message, I've received it and will get back to you soon.\n\n" +
+      "Best,\nRoberto \nhttps://robertosachioc.github.io"
+    );
+  }
+
   return ContentService.createTextOutput(
     JSON.stringify({ ok: true })
   ).setMimeType(ContentService.MimeType.JSON);
+
 }
 ```
-> **Auto-reply (already live):** the deployed version also sends the visitor an
-automatic email using `MailApp.sendEmail(...)` placed after `sheet.appendRow(...)`
-> and before the `return`. To change the reply wording: edit it in Apps Script,
-> then Deploy → Manage deployments → ✏️ → Version: "New version" → Deploy.
-> (Saving alone does NOT update the live version — the redeploy step is required.)
 
 3. Click the **save** icon (give the project any name).
 
