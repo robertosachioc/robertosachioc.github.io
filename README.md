@@ -7,6 +7,7 @@ The personal portfolio of Roberto Sachio Cendikiawan (曾福輝). Built with pla
 ## Features
 
 - Full-screen statement hero with light/dark theme toggle
+- "Where I'm headed" flip cards revealing career-direction details on hover
 - Experience & organization timelines with company logos
 - Project cards with custom covers and PDF deliverables
 - Horizontal "magazine shelf" for essays and macro briefs

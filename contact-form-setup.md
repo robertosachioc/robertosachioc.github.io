@@ -40,11 +40,12 @@ function doPost(e) {
 }
 ```
 
-> **After ANY code edit:** saving is NOT enough. You must redeploy:
-> Deploy → Manage deployments → ✏️ pencil → Version: "New version" → Deploy.
-> The URL stays the same; nothing changes on the website.
-
 3. Click the **save** icon (give the project any name).
+
+> **After ANY future code edit:** saving is NOT enough — the live URL keeps
+> running the old version. You must redeploy:
+> **Deploy → Manage deployments → ✏️ pencil → Version: "New version" → Deploy.**
+> The URL stays the same, nothing changes on the website.
 
 ## Step 3 — Deploy it
 1. Click **Deploy → New deployment**.
@@ -70,13 +71,11 @@ function doPost(e) {
 3. Save, commit, push. Done!
 
 ## How it behaves
-- **URL filled in:** visitor clicks "Send message" → button shows "Sending…"
-  then "Sent ✓" → a new row appears in your Sheet instantly.
+- **URL filled in:** visitor clicks "Send message" → a confirmation card appears
+  with their name → a new row lands in your Sheet instantly → they receive an
+  automatic email reply within seconds.
 - **URL left empty:** the form falls back to the old behavior
   (opens the visitor's email app pre-filled).
-- Uncomment the MailApp block in the script if you also want an
-  email notification for every message (still free — Gmail allows
-  ~100 script-sent emails per day).
 
 ## Testing
 After deploying, open your live site, fill in the form with test data, and
