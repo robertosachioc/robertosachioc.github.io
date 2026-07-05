@@ -73,7 +73,7 @@
         })
         .catch(function(){
           btn.disabled = false; btn.textContent = 'Send message →';
-          formNote.textContent = "Couldn't send — please email me directly instead.";
+          if (formNote) formNote.textContent = "Couldn't send, please email me directly instead.";
         });
     } else {
       const subject = encodeURIComponent('Portfolio contact from ' + name);

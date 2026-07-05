@@ -26,6 +26,11 @@ function doPost(e) {
   ).setMimeType(ContentService.MimeType.JSON);
 }
 ```
+> **Auto-reply (already live):** the deployed version also sends the visitor an
+automatic email using `MailApp.sendEmail(...)` placed after `sheet.appendRow(...)`
+> and before the `return`. To change the reply wording: edit it in Apps Script,
+> then Deploy → Manage deployments → ✏️ → Version: "New version" → Deploy.
+> (Saving alone does NOT update the live version — the redeploy step is required.)
 
 3. Click the **save** icon (give the project any name).
 

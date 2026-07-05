@@ -11,7 +11,7 @@ The personal portfolio of Roberto Sachio Cendikiawan (曾福輝). Built with pla
 - Project cards with custom covers and PDF deliverables
 - Horizontal "magazine shelf" for essays and macro briefs
 - Parallax city photo band
-- Contact form (email fallback, Google Sheets–ready — see `contact-form-setup.md`)
+- Working contact form — messages land in a Google Sheet and the sender gets an automatic email reply (setup: `contact-form-setup.md`)
 - Fully responsive on desktop, tablet, and phone
 
 ## Structure
