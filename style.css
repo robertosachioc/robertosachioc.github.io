@@ -456,3 +456,27 @@
     transition:border-color .2s;
   }
   .fs-again:hover { border-color:var(--accent); }
+
+  /* ---------- Large screen scaling ---------- */
+  @media (min-width: 1600px) {
+    body { zoom: 1.15; }
+  }
+  @media (min-width: 2100px) {
+    body { zoom: 1.35; }
+  }
+  @media (min-width: 3000px) {
+    body { zoom: 1.7; }
+  }
+
+/* ---------- Wider, neat hero on desktop ---------- */
+@media (min-width: 1200px) {
+  .hero-wrap .wrap.hero {
+    max-width: 1420px;     /* wider than the 1180px box, but still contained */
+  }
+  h1.headline {
+    font-size: clamp(42px, 5.4vw, 100px);  /* a bit bigger, not tower-tall */
+  }
+  .hero-visual {
+    max-width: 400px;      /* photo grows a little, keeps its card look */
+  }
+}
