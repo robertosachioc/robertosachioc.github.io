@@ -1,300 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Roberto Sachio Cendikiawan </title>
-<meta name="theme-color" content="#132339" />
-<meta name="description" content="Roberto Sachio Cendikiawan Portfolio (economics, business, and marketing)" />
-<!-- Favicon: R monogram in brand blue (inline SVG, no file needed) -->
-<link rel="preload" as="image" href="image/banner/city-taipei.jpg" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233f6f9e'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-size='36' font-weight='800' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
-<!-- Social preview when the link is shared (LinkedIn, WhatsApp, etc.) -->
-<meta property="og:title" content="Roberto Sachio Cendikiawan — Portfolio" />
-<meta property="og:description" content="Economics, business & marketing. NTU student open to internships in finance and economics." />
-<meta property="og:image" content="https://robertosachioc.github.io/image/personal-image/roberto.jpg" />
-<meta property="og:url" content="https://robertosachioc.github.io/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
-<link href="style.css" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roberto Sachio Cendikiawan </title>
+  <meta name="theme-color" content="#132339" />
+  <meta name="description" content="Roberto Sachio Cendikiawan Portfolio (economics, business, and marketing)" />
+  <!-- Favicon: R monogram in brand blue (inline SVG, no file needed) -->
+  <link rel="preload" as="image" href="image/banner/city-taipei.jpg" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233f6f9e'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-size='36' font-weight='800' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
+  <!-- Social preview when the link is shared (LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:title" content="Roberto Sachio Cendikiawan — Portfolio" />
+  <meta property="og:description"
+    content="Economics, business & marketing. NTU student open to internships in finance and economics." />
+  <meta property="og:image" content="https://robertosachioc.github.io/image/personal-image/roberto.jpg" />
+  <meta property="og:url" content="https://robertosachioc.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+    rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path>
-  </symbol>
-  <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5 5 0 0 1 16 8Z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
-  </symbol>
-  <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2-.2 4-1 4-4.5a3.5 3.5 0 0 0-1-2.5c.3-1 .3-2 0-3 0 0-1 0-2.5 1.5a10 10 0 0 0-5 0C8.5 5 7.5 5 7.5 5c-.3 1-.3 2 0 3a3.5 3.5 0 0 0-1 2.5c0 3.5 2 4.3 4 4.5-.4.4-.5.9-.5 2V21"></path>
-  </symbol>
-  <symbol id="icon-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path>
-  </symbol>
-  <!-- Section-heading icons (hand-drawn line icons, free to use — also saved as files in image/icons/) -->
-  <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
-  </symbol>
-  <symbol id="icon-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path><path d="M22 10v4"></path>
-  </symbol>
-  <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M2 13h20"></path>
-  </symbol>
-  <symbol id="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-  </symbol>
-  <symbol id="icon-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path>
-    <path d="M2 14h4"></path><path d="M10 8h4"></path><path d="M18 16h4"></path>
-  </symbol>
-  <symbol id="icon-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
-  </symbol>
-  <symbol id="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-  </symbol>
-  <symbol id="icon-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path>
-  </symbol>
-  <symbol id="icon-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle>
-    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-  </symbol>
-</svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+      <path d="m22 6-10 7L2 6"></path>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5 5 0 0 1 16 8Z"></path>
+      <rect x="2" y="9" width="4" height="12"></rect>
+      <circle cx="4" cy="4" r="2"></circle>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path
+        d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2-.2 4-1 4-4.5a3.5 3.5 0 0 0-1-2.5c.3-1 .3-2 0-3 0 0-1 0-2.5 1.5a10 10 0 0 0-5 0C8.5 5 7.5 5 7.5 5c-.3 1-.3 2 0 3a3.5 3.5 0 0 0-1 2.5c0 3.5 2 4.3 4 4.5-.4.4-.5.9-.5 2V21">
+      </path>
+    </symbol>
+    <symbol id="icon-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <path d="M14 2v6h6"></path>
+    </symbol>
+    <!-- Section-heading icons (hand-drawn line icons, free to use — also saved as files in image/icons/) -->
+    <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </symbol>
+    <symbol id="icon-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M22 10 12 5 2 10l10 5 10-5z"></path>
+      <path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path>
+      <path d="M22 10v4"></path>
+    </symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+      <path d="M2 13h20"></path>
+    </symbol>
+    <symbol id="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+    </symbol>
+    <symbol id="icon-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 21v-7"></path>
+      <path d="M4 10V3"></path>
+      <path d="M12 21v-9"></path>
+      <path d="M12 8V3"></path>
+      <path d="M20 21v-5"></path>
+      <path d="M20 12V3"></path>
+      <path d="M2 14h4"></path>
+      <path d="M10 8h4"></path>
+      <path d="M18 16h4"></path>
+    </symbol>
+    <symbol id="icon-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M12 20h9"></path>
+      <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+    </symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </symbol>
+    <symbol id="icon-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <path d="M15 3h6v6"></path>
+      <path d="M10 14 21 3"></path>
+    </symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+      <circle cx="9" cy="7" r="4"></circle>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </symbol>
+  </svg>
 
-<nav class="topnav">
-  <div class="wrap">
-    <a href="#top" class="brand">Roberto</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#organizations">Organizations</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#writing">Writing</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div style="display:flex; align-items:center; gap:14px;">
-      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="theme-knob-track"><span class="theme-knob"></span></span>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-<nav class="mobile-panel" id="mobilePanel">
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#experience">Experience</a>
-  <a href="#organizations">Organizations</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#writing">Writing</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<!-- HERO -->
-<header class="hero-wrap" id="top">
-  <div class="wrap hero">
-    <div class="hero-copy reveal">
-      <h1 class="headline serif">I study <em>markets</em>, money<br>&amp; how businesses<br>really work.</h1>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:robertosc1178@gmail.com"><svg><use href="#icon-mail"></use></svg>Get in touch</a>
-        <a class="btn btn-ghost" href="image/cv/CV.pdf" target="_blank"><svg><use href="#icon-doc"></use></svg>View CV</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/robertosachio/" target="_blank" rel="noopener"><svg><use href="#icon-linkedin"></use></svg>LinkedIn</a>
+  <nav class="topnav">
+    <div class="wrap">
+      <a href="#top" class="brand">Roberto</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#organizations">Organizations</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="theme-knob-track"><span class="theme-knob"></span></span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
-    <div class="hero-visual reveal">
-      <img class="hero-photo" src="image/personal-image/roberto.jpg" alt="Roberto Sachio Cendikiawan">
+  </nav>
+  <nav class="mobile-panel" id="mobilePanel">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#organizations">Organizations</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#writing">Writing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-wrap" id="top">
+    <div class="wrap hero">
+      <div class="hero-copy reveal">
+        <h1 class="headline serif">I study <em>markets</em>, money<br>&amp; how businesses<br>really work.</h1>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:robertosc1178@gmail.com"><svg>
+              <use href="#icon-mail"></use>
+            </svg>Get in touch</a>
+          <a class="btn btn-ghost" href="image/cv/CV.pdf" target="_blank"><svg>
+              <use href="#icon-doc"></use>
+            </svg>View CV</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/robertosachio/" target="_blank" rel="noopener"><svg>
+              <use href="#icon-linkedin"></use>
+            </svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <img class="hero-photo" src="image/personal-image/roberto.jpg" alt="Roberto Sachio Cendikiawan">
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="blocks">
+  <main class="blocks">
 
-  <!-- ABOUT -->
-  <section id="about" class="block about reveal dark">
-    <div class="kicker serif">Get to know me</div>
-    <p class="about-statement">I'm Roberto Sachio Cendikiawan (曾福輝) from Indonesia. My work has ranged from <strong>research across business</strong>, <strong>product QA for an app with 10M+ users</strong>, and <strong>growing social channels past 100K views</strong>. I enjoy moving between analytical work and creative projects.</p>
-    <p>Outside of that, I love swimming, traveling, or building side projects. I enjoy solving problems, working with teams, and learning from everyone I meet.</p>
+    <!-- ABOUT -->
+    <section id="about" class="block about reveal dark">
+      <div class="kicker serif">Get to know me</div>
+      <p class="about-statement">I'm Roberto Sachio Cendikiawan (曾福輝) from Indonesia. My work has ranged from
+        <strong>research across business</strong>, <strong>product QA for an app with 10M+ users</strong>, and
+        <strong>growing social channels past 100K views</strong>. I enjoy moving between analytical work and creative
+        projects.</p>
+      <p>Outside of that, I love swimming, traveling, or building side projects. I enjoy solving problems, working with
+        teams, and learning from everyone I meet.</p>
 
-    <div class="dir-label">Where I'm headed</div>
-    <!-- Hover a tile: it fills with color, the title grows, and a one-line explanation appears.
+      <div class="dir-label">Where I'm headed</div>
+      <!-- Hover a tile: it fills with color, the title grows, and a one-line explanation appears.
          To show a photo on hover instead of the color, add
          style="--tile-img:url('image/your-photo.jpg')"   to any card below. -->
-    <!-- Hover a card to FLIP it (tap on phones) — the back shows the explanation. -->
-    <div class="dir-grid">
-      <button class="dir-card" type="button" aria-pressed="false">
-        <span class="dir-flip">
-          <span class="dir-face dir-front"><h3>Finance Analyst</h3></span>
-          <span class="dir-face dir-back"><p>Valuation, markets, and macro analysis for financial decision-making.</p></span>
-        </span>
-      </button>
-      <button class="dir-card" type="button" aria-pressed="false">
-        <span class="dir-flip">
-          <span class="dir-face dir-front"><h3>Business Development</h3></span>
-          <span class="dir-face dir-back"><p>Finding the growth story and building the case with numbers.</p></span>
-        </span>
-      </button>
-      <button class="dir-card" type="button" aria-pressed="false">
-        <span class="dir-flip">
-          <span class="dir-face dir-front"><h3>Market Research</h3></span>
-          <span class="dir-face dir-back"><p>Data-driven answers to what customers actually want.</p></span>
-        </span>
-      </button>
-      <button class="dir-card" type="button" aria-pressed="false">
-        <span class="dir-flip">
-          <span class="dir-face dir-front"><h3>Product &amp; Project Management</h3></span>
-          <span class="dir-face dir-back"><p>From idea to launch across planning, coordinating, delivering.</p></span>
-        </span>
-      </button>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education" class="block reveal">
-    <div class="kicker serif">Education</div>
-    <div class="timeline single">
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/ntu.webp" loading="lazy" alt="NTU logo">
-        <div class="when">2023 — 2027</div>
-        <h3>B.S. in Agricultural Economics</h3>
-        <div class="org">National Taiwan University · Taipei
-          <a class="org-link" href="https://www.ntu.edu.tw/english/" target="_blank" rel="noopener" aria-label="NTU website"><svg><use href="#icon-ext"></use></svg></a>
-        </div>
-        <ul class="node-points">
-          <li><b class="hl">Cumulative GPA:</b> 4.08 / 4.30</li>
-          <li><b class="hl">Awards:</b> Dean's List, OCAC Scholarship, NTU Presidential Award, 結草銜環 Scholarship.</li>
-          <li><b class="hl">Relevant coursework:</b> Macroeconomics, Microeconomics, Accounting, Statistics, Financial Management, Multinational Business Management, Environmental Economics, Financial Markets (Coursera).</li>
-        </ul>
+      <!-- Hover a card to FLIP it (tap on phones) — the back shows the explanation. -->
+      <div class="dir-grid">
+        <button class="dir-card" type="button" aria-pressed="false">
+          <span class="dir-flip">
+            <span class="dir-face dir-front">
+              <h3>Finance Analyst</h3>
+            </span>
+            <span class="dir-face dir-back">
+              <p>Valuation, markets, and macro analysis for financial decision-making.</p>
+            </span>
+          </span>
+        </button>
+        <button class="dir-card" type="button" aria-pressed="false">
+          <span class="dir-flip">
+            <span class="dir-face dir-front">
+              <h3>Business Development</h3>
+            </span>
+            <span class="dir-face dir-back">
+              <p>Finding the growth story and building the case with numbers.</p>
+            </span>
+          </span>
+        </button>
+        <button class="dir-card" type="button" aria-pressed="false">
+          <span class="dir-flip">
+            <span class="dir-face dir-front">
+              <h3>Market Research</h3>
+            </span>
+            <span class="dir-face dir-back">
+              <p>Data-driven answers to what customers actually want.</p>
+            </span>
+          </span>
+        </button>
+        <button class="dir-card" type="button" aria-pressed="false">
+          <span class="dir-flip">
+            <span class="dir-face dir-front">
+              <h3>Product &amp; Project Management</h3>
+            </span>
+            <span class="dir-face dir-back">
+              <p>From idea to launch across planning, coordinating, delivering.</p>
+            </span>
+          </span>
+        </button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="block reveal">
-    <div class="kicker serif">Experience</div>
-    <div class="timeline">
-
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/piccollage.jpg" alt="PicCollage logo" loading="lazy">
-        <div class="when">Jul 2025 — Present</div>
-        <h3>Product QA &amp; Office Intern</h3>
-        <div class="org">PicCollage · Taipei
-          <a class="org-link" href="https://piccollage.com" target="_blank" rel="noopener" aria-label="PicCollage website"><svg><use href="#icon-ext"></use></svg></a>
+    <!-- EDUCATION -->
+    <section id="education" class="block reveal">
+      <div class="kicker serif">Education</div>
+      <div class="timeline single">
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/ntu.webp" loading="lazy" alt="NTU logo">
+          <div class="when">2023 — 2027</div>
+          <h3>B.S. in Agricultural Economics</h3>
+          <div class="org">National Taiwan University · Taipei
+            <a class="org-link" href="https://www.ntu.edu.tw/english/" target="_blank" rel="noopener"
+              aria-label="NTU website"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li><b class="hl">Cumulative GPA:</b> 4.08 / 4.30</li>
+            <li><b class="hl">Awards:</b> Dean's List, OCAC Scholarship, NTU Presidential Award, 結草銜環 Scholarship.</li>
+            <li><b class="hl">Relevant coursework:</b> Macroeconomics, Microeconomics, Accounting, Statistics, Financial
+              Management, Multinational Business Management, Environmental Economics, Financial Markets (Coursera).</li>
+          </ul>
         </div>
-        <ul class="node-points">
-          <li>Executed <b class="hl">100+</b> test cases; identified and reported <b class="hl">40+</b> bugs across device platforms.</li>
-          <li>Conducted monetization testing across <b class="hl">5+ languages</b> for a product with <b class="hl">10M+ active users</b>.</li>
-          <li>Supported cross-functional workflows and office operations, contributing to an <b class="hl">82.5%+</b> team satisfaction rate.</li>
-        </ul>
       </div>
+    </section>
 
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/ntu.webp" alt="NTU logo" loading="lazy">
-        <div class="when">Sep 2025 — June 2026</div>
-        <h3>Research Assistant</h3>
-        <div class="org">NTU Structural Economics Lab · Taipei
-          <a class="org-link" href="https://www.ntu.edu.tw/english/" target="_blank" rel="noopener" aria-label="NTU website"><svg><use href="#icon-ext"></use></svg></a>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="block reveal">
+      <div class="kicker serif">Experience</div>
+      <div class="timeline">
+
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/piccollage.jpg" alt="PicCollage logo" loading="lazy">
+          <div class="when">Jul 2025 — Present</div>
+          <h3>Product QA &amp; Office Intern</h3>
+          <div class="org">PicCollage · Taipei
+            <a class="org-link" href="https://piccollage.com" target="_blank" rel="noopener"
+              aria-label="PicCollage website"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li>Executed <b class="hl">100+</b> test cases; identified and reported <b class="hl">40+</b> bugs across
+              device platforms.</li>
+            <li>Conducted monetization testing across <b class="hl">5+ languages</b> for a product with <b
+                class="hl">10M+ active users</b>.</li>
+            <li>Supported cross-functional workflows and office operations, contributing to an <b class="hl">82.5%+</b>
+              team satisfaction rate.</li>
+          </ul>
         </div>
-        <ul class="node-points">
-          <li>Researching U.S. semiconductor industrial policy about resilience, localization, and supply chains.</li>
-          <li>Cleaned and managed <b class="hl">15M+</b> administrative labor records and built key variables for analysis.</li>
-          <li>Built concordance tables integrating heterogeneous datasets for empirical economic research.</li>
-        </ul>
-      </div>
-      
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/storageforsports.png" alt="Storage for Sports logo" loading="lazy">
-        <div class="when">May — Aug 2025</div>
-        <h3>Marketing Intern</h3>
-        <div class="org">Storage for Sports · Taipei
-          <a class="org-link" href="https://www.linkedin.com/company/storageforsports/" target="_blank" rel="noopener" aria-label="Storage for Sports LinkedIn"><svg><use href="#icon-ext"></use></svg></a>
+
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/ntu.webp" alt="NTU logo" loading="lazy">
+          <div class="when">Sep 2025 — June 2026</div>
+          <h3>Research Assistant</h3>
+          <div class="org">NTU Structural Economics Lab · Taipei
+            <a class="org-link" href="https://www.ntu.edu.tw/english/" target="_blank" rel="noopener"
+              aria-label="NTU website"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li>Researching U.S. semiconductor industrial policy about resilience, localization, and supply chains.</li>
+            <li>Cleaned and managed <b class="hl">15M+</b> administrative labor records and built key variables for
+              analysis.</li>
+            <li>Built concordance tables integrating heterogeneous datasets for empirical economic research.</li>
+          </ul>
         </div>
-        <ul class="node-points">
-          <li>Co-created video content across YouTube, TikTok, Instagram, and X, generating <b class="hl">50,000+</b> total views.</li>
-          <li>Grew LinkedIn organic impressions by <b class="hl">200%+</b> in three months through content strategy.</li>
-          <li>Designed <b class="hl">10+</b> infographics and wrote SEO-optimized blog content on WordPress.</li>
-        </ul>
-      </div>
 
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/geniefriends.jpg" alt="GenieFriends logo" loading="lazy">
-        <div class="when">Apr — Jun 2025</div>
-        <h3>Event &amp; Marketing</h3>
-        <div class="org">GenieFriends · Taipei
-          <a class="org-link" href="https://www.linkedin.com/company/geniefriends/" target="_blank" rel="noopener" aria-label="GenieFriends LinkedIn"><svg><use href="#icon-ext"></use></svg></a>
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/storageforsports.png" alt="Storage for Sports logo" loading="lazy">
+          <div class="when">May — Aug 2025</div>
+          <h3>Marketing Intern</h3>
+          <div class="org">Storage for Sports · Taipei
+            <a class="org-link" href="https://www.linkedin.com/company/storageforsports/" target="_blank" rel="noopener"
+              aria-label="Storage for Sports LinkedIn"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li>Co-created video content across YouTube, TikTok, Instagram, and X, generating <b class="hl">50,000+</b>
+              total views.</li>
+            <li>Grew LinkedIn organic impressions by <b class="hl">200%+</b> in three months through content strategy.
+            </li>
+            <li>Designed <b class="hl">10+</b> infographics and wrote SEO-optimized blog content on WordPress.</li>
+          </ul>
         </div>
-        <ul class="node-points">
-          <li>Supported event execution and on-site coordination for a builders-and-creatives community active in <b class="hl">4 countries</b>.</li>
-          <li>Captured photo and video content documenting community events and attendee engagement.</li>
-        </ul>
-      </div>
 
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/ntu.webp" alt="NTU logo" loading="lazy">
-        <div class="when">Sep 2024 — Jun 2025</div>
-        <h3>Teaching Assistant (Liberal Education)</h3>
-        <div class="org">National Taiwan University · Taipei
-          <a class="org-link" href="https://www.ntu.edu.tw/english/" target="_blank" rel="noopener" aria-label="NTU website"><svg><use href="#icon-ext"></use></svg></a>
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/geniefriends.jpg" alt="GenieFriends logo" loading="lazy">
+          <div class="when">Apr — Jun 2025</div>
+          <h3>Event &amp; Marketing</h3>
+          <div class="org">GenieFriends · Taipei
+            <a class="org-link" href="https://www.linkedin.com/company/geniefriends/" target="_blank" rel="noopener"
+              aria-label="GenieFriends LinkedIn"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li>Supported event execution and on-site coordination for a builders-and-creatives community active in <b
+                class="hl">4 countries</b>.</li>
+            <li>Captured photo and video content documenting community events and attendee engagement.</li>
+          </ul>
         </div>
-        <ul class="node-points">
-          <li>Delivered instructional support for <b class="hl">50+ students</b> in "Biology in the Movies" with a <b class="hl">90%+</b> satisfaction rate.</li>
-          <li>Evaluated weekly assignments and maintained consistent academic standards with timely feedback.</li>
-          <li>Led course communications, announcements, and student inquiries.</li>
-        </ul>
-      </div>
 
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/arc.jpg" alt="Arc logo" loading="lazy">
-        <div class="when">Apr 2024 — Mar 2025</div>
-        <h3>Social Media Intern</h3>
-        <div class="org">Arc.dev · Codementor
-          <a class="org-link" href="https://arc.dev/" target="_blank" rel="noopener" aria-label="Arc website"><svg><use href="#icon-ext"></use></svg></a>
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/ntu.webp" alt="NTU logo" loading="lazy">
+          <div class="when">Sep 2024 — Jun 2025</div>
+          <h3>Teaching Assistant (Liberal Education)</h3>
+          <div class="org">National Taiwan University · Taipei
+            <a class="org-link" href="https://www.ntu.edu.tw/english/" target="_blank" rel="noopener"
+              aria-label="NTU website"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li>Delivered instructional support for <b class="hl">50+ students</b> in "Biology in the Movies" with a <b
+                class="hl">90%+</b> satisfaction rate.</li>
+            <li>Evaluated weekly assignments and maintained consistent academic standards with timely feedback.</li>
+            <li>Led course communications, announcements, and student inquiries.</li>
+          </ul>
         </div>
-        <ul class="node-points">
-          <li>Produced <b class="hl">100+</b> videos across X, Instagram, YouTube, and LinkedIn for a Techstars-backed talent marketplace.</li>
-          <li>Scaled YouTube to <b class="hl">104K+ views</b> and <b class="hl">193K impressions</b>, boosting subscribers by <b class="hl">15%</b>.</li>
-          <li>Grew LinkedIn to <b class="hl">58K+ impressions</b> in 10 months; lifted Instagram engagement <b class="hl">72%</b> in 3 months.</li>
-          <li>Built TikTok from <b class="hl">0 to 45K views</b> to expand brand reach.</li>
-        </ul>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- ORGANIZATIONS -->
-  <section id="organizations" class="block reveal">
-    <div class="kicker serif">Organizations</div>
-    <div class="timeline single">
-
-      <div class="node has-logo">
-        <img class="node-logo" src="image/logo/ntuisa.jpeg" alt="NTUISA logo" loading="lazy">
-        <div class="when">Jul 2024 — Jun 2025</div>
-        <h3>Public Relations Member</h3>
-        <div class="org">NTU Indonesian Student Association (NTUISA) · Taipei
-          <a class="org-link" href="https://www.linkedin.com/company/ntuisa/" target="_blank" rel="noopener" aria-label="NTUISA LinkedIn"><svg><use href="#icon-ext"></use></svg></a>
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/arc.jpg" alt="Arc logo" loading="lazy">
+          <div class="when">Apr 2024 — Mar 2025</div>
+          <h3>Social Media Intern</h3>
+          <div class="org">Arc.dev · Codementor
+            <a class="org-link" href="https://arc.dev/" target="_blank" rel="noopener" aria-label="Arc website"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li>Produced <b class="hl">100+</b> videos across X, Instagram, YouTube, and LinkedIn for a Techstars-backed
+              talent marketplace.</li>
+            <li>Scaled YouTube to <b class="hl">104K+ views</b> and <b class="hl">193K impressions</b>, boosting
+              subscribers by <b class="hl">15%</b>.</li>
+            <li>Grew LinkedIn to <b class="hl">58K+ impressions</b> in 10 months; lifted Instagram engagement <b
+                class="hl">72%</b> in 3 months.</li>
+            <li>Built TikTok from <b class="hl">0 to 45K views</b> to expand brand reach.</li>
+          </ul>
         </div>
-        <ul class="node-points">
-          <li>Supported <b class="hl">120+</b> Indonesian freshmen with document preparation and academic onboarding in a <b class="hl">300+ member</b> organization.</li>
-          <li>Led welcome dinners and orientation events for master's and doctoral students, cutting costs by <b class="hl">10%</b> through efficient budgeting.</li>
-          <li>Drove marketing initiatives that increased sales by <b class="hl">50%+</b> through targeted audience strategies.</li>
-          <li>Led the Cultural Division for NTU's Break and Fuse Fest, achieving an <b class="hl">80%+ profit margin</b> on Cultural Indonesia merchandise.</li>
-        </ul>
-      </div>
 
-      <!-- TEMPLATE for future organizations:
+      </div>
+    </section>
+
+    <!-- ORGANIZATIONS -->
+    <section id="organizations" class="block reveal">
+      <div class="kicker serif">Organizations</div>
+      <div class="timeline single">
+
+        <div class="node has-logo">
+          <img class="node-logo" src="image/logo/ntuisa.jpeg" alt="NTUISA logo" loading="lazy">
+          <div class="when">Jul 2024 — Jun 2025</div>
+          <h3>Public Relations Member</h3>
+          <div class="org">NTU Indonesian Student Association (NTUISA) · Taipei
+            <a class="org-link" href="https://www.linkedin.com/company/ntuisa/" target="_blank" rel="noopener"
+              aria-label="NTUISA LinkedIn"><svg>
+                <use href="#icon-ext"></use>
+              </svg></a>
+          </div>
+          <ul class="node-points">
+            <li>Supported <b class="hl">120+</b> Indonesian freshmen with document preparation and academic onboarding
+              in a <b class="hl">300+ member</b> organization.</li>
+            <li>Led welcome dinners and orientation events for master's and doctoral students, cutting costs by <b
+                class="hl">10%</b> through efficient budgeting.</li>
+            <li>Drove marketing initiatives that increased sales by <b class="hl">50%+</b> through targeted audience
+              strategies.</li>
+            <li>Led the Cultural Division for NTU's Break and Fuse Fest, achieving an <b class="hl">80%+ profit
+                margin</b> on Cultural Indonesia merchandise.</li>
+          </ul>
+        </div>
+
+        <!-- TEMPLATE for future organizations:
       <div class="node has-logo">
         <img class="node-logo" src="image/logo/your-logo.png" alt="Organization logo" loading="lazy">
         <div class="when">Year — Year</div>
@@ -308,85 +414,95 @@
       </div>
       -->
 
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- PHOTO BREAK — the image stays FIXED while the page scrolls over it (window reveal effect) -->
-  <div class="photo-band" role="img" aria-label="City high-rise buildings from a low angle"></div>
+    <!-- PHOTO BREAK — the image stays FIXED while the page scrolls over it (window reveal effect) -->
+    <div class="photo-band" role="img" aria-label="City high-rise buildings from a low angle"></div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="block reveal dark">
-    <div class="kicker serif">Projects</div>
-    <!-- HOW TO ADD MORE PROJECTS: copy one <div class="proj">…</div> block and paste it inside
+    <!-- PROJECTS -->
+    <section id="projects" class="block reveal dark">
+      <div class="kicker serif">Projects</div>
+      <!-- HOW TO ADD MORE PROJECTS: copy one <div class="proj">…</div> block and paste it inside
          .projects below. Once you have MORE THAN 4 projects, a "See all projects" button
          appears automatically and the extras stay hidden until it's clicked. -->
-    <!-- Covers: your SVG covers 1-5 mapped in page order (1=BNPL ... 5=Snow Factory).
+      <!-- Covers: your SVG covers 1-5 mapped in page order (1=BNPL ... 5=Snow Factory).
      Wrong match? Just swap the -cover.jpg filenames below. Originals kept in image/cover/ -->
-    <div class="projects" id="projectsGrid">
+      <div class="projects" id="projectsGrid">
 
-      <div class="proj">
-        <img class="proj-thumb" src="image/previewthumbnail/q1-bnpl.jpg" alt="Cover of the BNPL research" loading="lazy">
-        <div class="proj-body">
-          <div class="role">Economics Research</div>
-          <h3>BNPL: Smoothing or Debt Trap, and for Whom?</h3>
-          <p>A research proposal on the welfare effects of Buy Now, Pay Later consumer credit in the United States.</p>
-          <div class="proj-links">
-            <a class="pdf-link" href="image/project/BNPL/paper.pdf" target="_blank">Read the proposal →</a>
-            <a class="pdf-link" href="image/project/BNPL/ppt.pdf" target="_blank">View the deck →</a>
+        <div class="proj">
+          <img class="proj-thumb" src="image/previewthumbnail/q1-bnpl.jpg" alt="Cover of the BNPL research"
+            loading="lazy">
+          <div class="proj-body">
+            <div class="role">Economics Research</div>
+            <h3>BNPL: Smoothing or Debt Trap, and for Whom?</h3>
+            <p>A research proposal on the welfare effects of Buy Now, Pay Later consumer credit in the United States.
+            </p>
+            <div class="proj-links">
+              <a class="pdf-link" href="image/project/BNPL/paper.pdf" target="_blank">Read the proposal →</a>
+              <a class="pdf-link" href="image/project/BNPL/ppt.pdf" target="_blank">View the deck →</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="proj">
-        <img class="proj-thumb" src="image/previewthumbnail/q2-openai.jpg" alt="Cover slide of the OpenAI valuation deck" loading="lazy">
-        <div class="proj-body">
-          <div class="role">Finance Case Study</div>
-          <h3>Valuing GenAI Innovation: OpenAI</h3>
-          <p>Led the team valuation of OpenAI and ChatGPT about its value and how far platform stretching can accelerate future valuation.</p>
-          <div class="proj-links">
-            <a class="pdf-link" href="image/project/OpenAI/OpenAI.pdf" target="_blank">View the deck →</a>
+        <div class="proj">
+          <img class="proj-thumb" src="image/previewthumbnail/q2-openai.jpg"
+            alt="Cover slide of the OpenAI valuation deck" loading="lazy">
+          <div class="proj-body">
+            <div class="role">Finance Case Study</div>
+            <h3>Valuing GenAI Innovation: OpenAI</h3>
+            <p>Led the team valuation of OpenAI and ChatGPT about its value and how far platform stretching can
+              accelerate future valuation.</p>
+            <div class="proj-links">
+              <a class="pdf-link" href="image/project/OpenAI/OpenAI.pdf" target="_blank">View the deck →</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="proj">
-        <img class="proj-thumb" src="image/previewthumbnail/q3-aistrategy.jpg" alt="Cover of the PX Mart AI strategy deck" loading="lazy">
-        <div class="proj-body">
-          <div class="role">AI Strategy for Business</div>
-          <h3>LINE WORKS AI Adoption: PX Mart</h3>
-          <p>Led the team for company-level AI adoption strategy for PX Mart (全聯福利中心) from analysis to final recommendation.</p>
-          <div class="proj-links">
-            <a class="pdf-link" href="image/project/AIstrategy/1.pdf" target="_blank">Strategy deck →</a>
-            <a class="pdf-link" href="image/project/AIstrategy/2.pdf" target="_blank">Final presentation →</a>
+        <div class="proj">
+          <img class="proj-thumb" src="image/previewthumbnail/q3-aistrategy.jpg"
+            alt="Cover of the PX Mart AI strategy deck" loading="lazy">
+          <div class="proj-body">
+            <div class="role">AI Strategy for Business</div>
+            <h3>LINE WORKS AI Adoption: PX Mart</h3>
+            <p>Led the team for company-level AI adoption strategy for PX Mart (全聯福利中心) from analysis to final
+              recommendation.</p>
+            <div class="proj-links">
+              <a class="pdf-link" href="image/project/AIstrategy/1.pdf" target="_blank">Strategy deck →</a>
+              <a class="pdf-link" href="image/project/AIstrategy/2.pdf" target="_blank">Final presentation →</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="proj">
-        <img class="proj-thumb" src="image/previewthumbnail/q4-koin.jpg" alt="Cover of the KOIN pitch deck" loading="lazy">
-        <div class="proj-body">
-          <div class="role">Entrepreneurship &amp; Innovation</div>
-          <h3>KOIN (Smarter Money Habits)</h3>
-          <p>A fintech pitch for app that builds smarter money habits. Concept, market, and business model developed with team with my focus on the financial aspects.</p>
-          <div class="proj-links">
-            <a class="pdf-link" href="image/project/EntreInnovation/KOIN.pdf" target="_blank">View the pitch →</a>
+        <div class="proj">
+          <img class="proj-thumb" src="image/previewthumbnail/q4-koin.jpg" alt="Cover of the KOIN pitch deck"
+            loading="lazy">
+          <div class="proj-body">
+            <div class="role">Entrepreneurship &amp; Innovation</div>
+            <h3>KOIN (Smarter Money Habits)</h3>
+            <p>A fintech pitch for app that builds smarter money habits. Concept, market, and business model developed
+              with team with my focus on the financial aspects.</p>
+            <div class="proj-links">
+              <a class="pdf-link" href="image/project/EntreInnovation/KOIN.pdf" target="_blank">View the pitch →</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="proj">
-        <img class="proj-thumb" src="image/previewthumbnail/q5-snowfactory.jpg" alt="Cover of the Snow Factory case deck" loading="lazy">
-        <div class="proj-body">
-          <div class="role">Multinational Business Management</div>
-          <h3>Snow Factory Multinational Expansion Project</h3>
-          <p>A group case on Snow Factory's international expansion from market entry, operations, and cross-border strategy.</p>
-          <div class="proj-links">
-            <a class="pdf-link" href="image/project/Mutinational/SnowFactory.pdf" target="_blank">View the case →</a>
+        <div class="proj">
+          <img class="proj-thumb" src="image/previewthumbnail/q5-snowfactory.jpg"
+            alt="Cover of the Snow Factory case deck" loading="lazy">
+          <div class="proj-body">
+            <div class="role">Multinational Business Management</div>
+            <h3>Snow Factory Multinational Expansion Project</h3>
+            <p>A group case on Snow Factory's international expansion from market entry, operations, and cross-border
+              strategy.</p>
+            <div class="proj-links">
+              <a class="pdf-link" href="image/project/Mutinational/SnowFactory.pdf" target="_blank">View the case →</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- TEMPLATE — copy for each new project. Thumbnail: 900x563 JPG in image/previewthumbnail/
+        <!-- TEMPLATE — copy for each new project. Thumbnail: 900x563 JPG in image/previewthumbnail/
       <div class="proj">
         <img class="proj-thumb" src="image/previewthumbnail/your-thumb.jpg" alt="Project preview" loading="lazy">
         <div class="proj-body">
@@ -398,65 +514,73 @@
       </div>
       -->
 
-    </div>
-    <div class="see-all-row" id="seeAllRow">
-      <button class="see-all-btn" id="seeAllBtn">See all projects ↓</button>
-    </div>
-
-      </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="block reveal">
-    <div class="kicker serif">What I work with</div>
-    <div class="skill-rows">
-      <div class="skill-row">
-        <div class="skill-cat">Core</div>
-        <div class="skill-items"><span>Financial Modeling</span><span>Market Research</span><span>Data Analysis</span><span>Product QA</span><span>Digital Marketing</span></div>
       </div>
-      <div class="skill-row">
-        <div class="skill-cat">Tools</div>
-        <div class="skill-items"><span>Excel</span><span>Tableau</span><span>Stata</span><span>PowerPoint</span><span>WordPress</span><span>Canva</span><span>Ahrefs</span></div>
+      <div class="see-all-row" id="seeAllRow">
+        <button class="see-all-btn" id="seeAllBtn">See all projects ↓</button>
       </div>
-      <div class="skill-row">
-        <div class="skill-cat">Languages</div>
-        <div class="skill-items"><span>Indonesian (native)</span><span>English (fluent)</span><span>Mandarin (conversational)</span></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- WRITING -->
-  <!-- EDIT — each entry: write a short 1-2 sentence preview here (keeps this file tidy),
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="block reveal">
+      <div class="kicker serif">What I work with</div>
+      <div class="skill-rows">
+        <div class="skill-row">
+          <div class="skill-cat">Core</div>
+          <div class="skill-items"><span>Financial Modeling</span><span>Market Research</span><span>Data
+              Analysis</span><span>Product QA</span><span>Digital Marketing</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Tools</div>
+          <div class="skill-items">
+            <span>Excel</span><span>Tableau</span><span>Stata</span><span>PowerPoint</span><span>WordPress</span><span>Canva</span><span>Ahrefs</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Languages</div>
+          <div class="skill-items"><span>Indonesian (native)</span><span>English (fluent)</span><span>Mandarin
+              (conversational)</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <!-- EDIT — each entry: write a short 1-2 sentence preview here (keeps this file tidy),
        then link "Read the full piece" at a PDF you upload to a writing/ folder in the repo.
        Duplicate a .write-card block below for each new post. -->
-  <section id="writing" class="block reveal">
-    <div class="kicker serif">Writing</div>
-    <p class="sec-note">Occasional essays and macro briefs.</p>
-    <div class="writing-scroller">
-      <button class="w-arrow prev" aria-label="Scroll writing left">←</button>
-      <button class="w-arrow next" aria-label="Scroll writing right">→</button>
-      <div class="writing-track" id="writingTrack">
+    <section id="writing" class="block reveal">
+      <div class="kicker serif">Writing</div>
+      <p class="sec-note">Occasional essays and macro briefs.</p>
+      <div class="writing-scroller">
+        <button class="w-arrow prev" aria-label="Scroll writing left">←</button>
+        <button class="w-arrow next" aria-label="Scroll writing right">→</button>
+        <div class="writing-track" id="writingTrack">
 
-        <a class="mag-card" href="image/writing/May2026.pdf" target="_blank">
-          <img class="mag-cover" src="image/previewthumbnail/may2026.jpg" alt="First page of the rupiah macro brief" loading="lazy">
-          <div class="mag-date">May 2026 · Indonesia Macro Brief</div>
-          <h3>Why the Rupiah Keeps Hitting Record Lows</h3>
-          <p class="preview">Explanation of why Indonesia's currency depreciation continues despite the Central Bank's rigorous policies.</p>
-          <span class="pdf-link">Read the full piece (PDF) →</span>
-        </a>
+          <a class="mag-card" href="image/writing/May2026.pdf" target="_blank">
+            <img class="mag-cover" src="image/previewthumbnail/may2026.jpg" alt="First page of the rupiah macro brief"
+              loading="lazy">
+            <div class="mag-date">May 2026 · Indonesia Macro Brief</div>
+            <h3>Why the Rupiah Keeps Hitting Record Lows</h3>
+            <p class="preview">Explanation of why Indonesia's currency depreciation continues despite the Central Bank's
+              rigorous policies.</p>
+            <span class="pdf-link">Read the full piece (PDF) →</span>
+          </a>
 
-        <a class="mag-card" href="image/writing/ResearchProposal.pdf" target="_blank">
-          <img class="mag-cover" src="image/previewthumbnail/mangrove-p1.jpg" alt="First page of the mangrove loss research proposal" loading="lazy">
-          <div class="mag-date">2026 · Environmental Economics</div>
-          <h3>Valuing Mangrove Loss</h3>
-          <p class="preview">What Hurricane Irma and Collier County housing prices reveal about the value of natural coastal protection using a difference-in-differences design.</p>
-          <span class="pdf-link">Read the proposal (PDF) →</span>
-        </a>
+          <a class="mag-card" href="image/writing/ResearchProposal.pdf" target="_blank">
+            <img class="mag-cover" src="image/previewthumbnail/mangrove-p1.jpg"
+              alt="First page of the mangrove loss research proposal" loading="lazy">
+            <div class="mag-date">2026 · Environmental Economics</div>
+            <h3>Valuing Mangrove Loss</h3>
+            <p class="preview">What Hurricane Irma and Collier County housing prices reveal about the value of natural
+              coastal protection using a difference-in-differences design.</p>
+            <span class="pdf-link">Read the proposal (PDF) →</span>
+          </a>
 
-        <div class="mag-card ghost" aria-hidden="true">
-          <div class="ghost-cover"><span>Next essay<br>coming soon</span></div>
-        </div>
+          <div class="mag-card ghost" aria-hidden="true">
+            <div class="ghost-cover"><span>Next essay<br>coming soon</span></div>
+          </div>
 
-        <!-- TEMPLATE — for each new piece: 1) put the PDF in image/writing/,
+          <!-- TEMPLATE — for each new piece: 1) put the PDF in image/writing/,
              2) screenshot its first page as a cover image, save it there too, 3) copy this:
         <a class="mag-card" href="image/writing/your-file.pdf" target="_blank">
           <img class="mag-cover" src="image/writing/your-cover.jpg" alt="Cover" loading="lazy">
@@ -467,42 +591,52 @@
         </a>
         -->
 
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- CONTACT (full-bleed dark band) -->
-<div id="contact" class="band-full deep reveal">
-  <div class="wrap">
-    <div class="contact-grid">
-      <div>
-        <h2 class="serif">Let's talk.</h2>
-        <p class="lede">Open to internships and opportunities across finance, business, and economics. Feel free to reach out!</p>
-        <div class="contact-links">
-          <!-- EDIT: contact links -->
-          <a href="mailto:robertosc1178@gmail.com"><span class="ic"><svg><use href="#icon-mail"></use></svg></span> robertosc1178@gmail.com</a>
-          <a href="https://linkedin.com/in/robertosachio/" target="_blank" rel="noopener"><span class="ic"><svg><use href="#icon-linkedin"></use></svg></span> linkedin.com/in/robertosachio</a>
-          <a href="https://github.com/robertosachioc" target="_blank" rel="noopener"><span class="ic"><svg><use href="#icon-github"></use></svg></span> github.com/robertosachioc</a>
         </div>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <input placeholder="Name" id="cf-name" required>
-          <input placeholder="Email" type="email" id="cf-email" required>
+    </section>
+
+  </main>
+
+  <!-- CONTACT (full-bleed dark band) -->
+  <div id="contact" class="band-full deep reveal">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <h2 class="serif">Let's talk.</h2>
+          <p class="lede">Open to internships and opportunities across finance, business, and economics. Feel free to
+            reach out!</p>
+          <div class="contact-links">
+            <!-- EDIT: contact links -->
+            <a href="mailto:robertosc1178@gmail.com"><span class="ic"><svg>
+                  <use href="#icon-mail"></use>
+                </svg></span> robertosc1178@gmail.com</a>
+            <a href="https://linkedin.com/in/robertosachio/" target="_blank" rel="noopener"><span class="ic"><svg>
+                  <use href="#icon-linkedin"></use>
+                </svg></span> linkedin.com/in/robertosachio</a>
+            <a href="https://github.com/robertosachioc" target="_blank" rel="noopener"><span class="ic"><svg>
+                  <use href="#icon-github"></use>
+                </svg></span> github.com/robertosachioc</a>
+          </div>
         </div>
-        <input placeholder="Company / role" id="cf-company">
-        <textarea placeholder="Your message" rows="4" id="cf-message" required></textarea>
-        <button type="submit" class="btn btn-primary">Send message →</button>
-      </form>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <input placeholder="Name" id="cf-name" required>
+            <input placeholder="Email" type="email" id="cf-email" required>
+          </div>
+          <input placeholder="Company / role" id="cf-company">
+          <textarea placeholder="Your message" rows="4" id="cf-message" required></textarea>
+          <button type="submit" class="btn btn-primary">Send message →</button>
+        </form>
+      </div>
+      <div class="footer-row">© 2026 Roberto Sachio Cendikiawan · City photo by <a
+          href="https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA"
+          target="_blank" rel="noopener" style="color:inherit;">Sean Pollock on Unsplash</a></div>
     </div>
-    <div class="footer-row">© 2026 Roberto Sachio Cendikiawan · City photo by <a href="https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA" target="_blank" rel="noopener" style="color:inherit;">Sean Pollock on Unsplash</a></div>
   </div>
-</div>
 
-<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
-<script src="script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
+
 </html>

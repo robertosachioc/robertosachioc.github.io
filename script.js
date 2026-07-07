@@ -1,4 +1,4 @@
-(function(){
+(function () {
   "use strict";
 
   /* ---------- EDIT ME: paste your Google Apps Script Web App URL here.
@@ -9,41 +9,41 @@
   /* ---------- Theme toggle (light/dark) ---------- */
   const root = document.documentElement;
   const themeBtn = document.getElementById('themeToggle');
-  function applyTheme(t){
+  function applyTheme(t) {
     root.setAttribute('data-theme', t);
-    try{ localStorage.setItem('theme', t); }catch(e){}
+    try { localStorage.setItem('theme', t); } catch (e) { }
   }
   let savedTheme = 'light';
-  try{ savedTheme = localStorage.getItem('theme') || 'light'; }catch(e){}
+  try { savedTheme = localStorage.getItem('theme') || 'light'; } catch (e) { }
   applyTheme(savedTheme);
-  themeBtn.addEventListener('click', function(){
+  themeBtn.addEventListener('click', function () {
     applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
   /* ---------- Mobile menu ---------- */
   const hamburger = document.getElementById('hamburger');
   const panel = document.getElementById('mobilePanel');
-  hamburger.addEventListener('click', function(){
+  hamburger.addEventListener('click', function () {
     const open = panel.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-  panel.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ panel.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); });
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); });
   });
 
   /* ---------- Gentle scroll reveal (progressive enhancement — visible without JS) ---------- */
   document.documentElement.classList.add('js-ready');
-  const obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
 
   /* ---------- Per-item reveal — timeline entries and project cards pop in
      one by one as each scrolls into view. Items that appear together get a
      small stagger so they cascade instead of landing all at once. ---------- */
-  const itemObs = new IntersectionObserver(function(entries){
+  const itemObs = new IntersectionObserver(function (entries) {
     let i = 0;
-    entries.forEach(function(e){
+    entries.forEach(function (e) {
       if (e.isIntersecting) {
         e.target.style.animationDelay = (i++ * 0.11) + 's';
         e.target.classList.add('item-in');
@@ -51,12 +51,12 @@
       }
     });
   }, { threshold: 0.15 });
-  document.querySelectorAll('.timeline .node, .projects .proj').forEach(function(el){ itemObs.observe(el); });
+  document.querySelectorAll('.timeline .node, .projects .proj').forEach(function (el) { itemObs.observe(el); });
 
   /* ---------- Contact form -> Google Sheet (or mailto fallback if URL not set) ---------- */
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
-  form.addEventListener('submit', function(e){
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
     const name = document.getElementById('cf-name').value;
     const email = document.getElementById('cf-email').value;
@@ -69,8 +69,8 @@
       const data = new FormData();
       data.append('name', name); data.append('email', email);
       data.append('company', company); data.append('message', message);
-      fetch(SHEET_WEBAPP_URL, { method:'POST', mode:'no-cors', body:data })
-        .then(function(){
+      fetch(SHEET_WEBAPP_URL, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function () {
           const firstName = (name || '').trim().split(' ')[0];
           const ok = document.createElement('div');
           ok.className = 'form-success';
@@ -80,13 +80,13 @@
             '<button type="button" class="fs-again">Send another message</button>';
           form.style.display = 'none';
           form.parentNode.insertBefore(ok, form);
-          ok.querySelector('.fs-again').addEventListener('click', function(){
+          ok.querySelector('.fs-again').addEventListener('click', function () {
             ok.remove(); form.reset();
             btn.disabled = false; btn.textContent = 'Send message →';
             form.style.display = '';
           });
         })
-        .catch(function(){
+        .catch(function () {
           btn.disabled = false; btn.textContent = 'Send message →';
           if (formNote) formNote.textContent = "Couldn't send, please email me directly instead.";
         });
@@ -99,33 +99,33 @@
 
   /* ---------- Active nav highlight while scrolling ---------- */
   const navAs = document.querySelectorAll('.nav-links a[href^="#"]');
-  const secObs = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
+  const secObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
       if (en.isIntersecting) {
-        navAs.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id); });
+        navAs.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id); });
       }
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
-  document.querySelectorAll('section[id], div[id="contact"]').forEach(function(s){ secObs.observe(s); });
+  document.querySelectorAll('section[id], div[id="contact"]').forEach(function (s) { secObs.observe(s); });
 
   /* ---------- Back to top ---------- */
   const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', function(){
+  window.addEventListener('scroll', function () {
     toTop.classList.toggle('show', window.scrollY > 600);
-  }, { passive:true });
-  toTop.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+  }, { passive: true });
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
   /* ---------- "See all projects" — only kicks in when you have more than 4 project cards ---------- */
-  (function(){
+  (function () {
     const grid = document.getElementById('projectsGrid');
     const row = document.getElementById('seeAllRow');
     const btn = document.getElementById('seeAllBtn');
     if (!grid || !row || !btn) return;
     const cards = Array.prototype.slice.call(grid.querySelectorAll('.proj'));
     if (cards.length > 4) {
-      cards.slice(4).forEach(function(c){ c.classList.add('extra'); });
+      cards.slice(4).forEach(function (c) { c.classList.add('extra'); });
       row.classList.add('show');
-      btn.addEventListener('click', function(){
+      btn.addEventListener('click', function () {
         const expanded = grid.classList.toggle('expanded');
         btn.textContent = expanded ? 'Show fewer ↑' : 'See all projects ↓';
       });
@@ -135,8 +135,8 @@
   /* ---------- Writing shelf arrows ---------- */
   const wTrack = document.getElementById('writingTrack');
   if (wTrack) {
-    document.querySelectorAll('.w-arrow').forEach(function(b){
-      b.addEventListener('click', function(){
+    document.querySelectorAll('.w-arrow').forEach(function (b) {
+      b.addEventListener('click', function () {
         wTrack.scrollBy({ left: (b.classList.contains('next') ? 1 : -1) * 320, behavior: 'smooth' });
       });
     });
@@ -146,17 +146,17 @@
   /* ---------- Scroll progress bar ---------- */
   const sp = document.getElementById('scrollProgress');
   if (sp) {
-    window.addEventListener('scroll', function(){
+    window.addEventListener('scroll', function () {
       const h = document.documentElement;
       const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
       sp.style.width = pct + '%';
-    }, { passive:true });
+    }, { passive: true });
   }
 
 
   /* ---------- Flip cards (Where I'm headed) ---------- */
-  document.querySelectorAll('.dir-card').forEach(function(card){
-    card.addEventListener('click', function(){
+  document.querySelectorAll('.dir-card').forEach(function (card) {
+    card.addEventListener('click', function () {
       const on = card.classList.toggle('flipped');
       card.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
