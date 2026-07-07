@@ -241,10 +241,15 @@
   .js-ready .reveal.dark { transform:none; }  /* full-bleed bands: fade only, no movement = no jank */
   /* Children stagger in via keyframe animation (doesn't block hover transitions) */
   @keyframes riseIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
-  .js-ready .reveal .proj, .js-ready .reveal .write-card, .js-ready .reveal .gh-card,
-  .js-ready .reveal .node, .js-ready .reveal .chip { opacity:0; }
-  .js-ready .reveal.in .proj, .js-ready .reveal.in .write-card, .js-ready .reveal.in .gh-card,
-  .js-ready .reveal.in .node, .js-ready .reveal.in .chip { animation:riseIn .6s cubic-bezier(.2,.7,.3,1) both; }
+  .js-ready .reveal .write-card, .js-ready .reveal .gh-card,
+  .js-ready .reveal .chip { opacity:0; }
+  .js-ready .reveal.in .write-card, .js-ready .reveal.in .gh-card,
+  .js-ready .reveal.in .chip { opacity:1; animation:riseIn .6s cubic-bezier(.2,.7,.3,1) backwards; }
+  /* Timeline entries & project cards reveal one by one as each scrolls into
+     view (JS adds .item-in per element, with a small stagger per batch).
+     `backwards` fill so hover transforms work again after the animation. */
+  .js-ready .timeline .node, .js-ready .projects .proj { opacity:0; }
+  .js-ready .timeline .node.item-in, .js-ready .projects .proj.item-in { opacity:1; animation:riseIn .65s cubic-bezier(.2,.7,.3,1) backwards; }
   .js-ready .reveal.in > * > *:nth-child(1), .js-ready .reveal.in .chip:nth-child(1) { animation-delay:.05s; }
   .js-ready .reveal.in > * > *:nth-child(2), .js-ready .reveal.in .chip:nth-child(2) { animation-delay:.12s; }
   .js-ready .reveal.in > * > *:nth-child(3), .js-ready .reveal.in .chip:nth-child(3) { animation-delay:.19s; }
@@ -286,6 +291,9 @@
   @media (prefers-reduced-motion:reduce) {
     * { transition:none !important; scroll-behavior:auto; animation:none !important; }
     .reveal, .js-ready .reveal { opacity:1 !important; transform:none !important; }
+    /* animations are disabled, so anything the reveal system hides must be forced visible */
+    .js-ready .reveal .write-card, .js-ready .reveal .gh-card, .js-ready .reveal .chip,
+    .js-ready .timeline .node, .js-ready .projects .proj { opacity:1 !important; }
   }
 
 
@@ -457,15 +465,14 @@
   }
   .fs-again:hover { border-color:var(--accent); }
 
-  /* ---------- Large screen scaling ---------- */
-  @media (min-width: 1600px) {
-    body { zoom: 1.15; }
+  /* ---------- Large screen scaling ----------
+     Kept modest — the editorial two-column layout below does the real work
+     of filling wide screens; zoom only compensates on very large monitors. */
+  @media (min-width: 1800px) {
+    body { zoom: 1.2; }
   }
-  @media (min-width: 2100px) {
-    body { zoom: 1.35; }
-  }
-  @media (min-width: 3000px) {
-    body { zoom: 1.7; }
+  @media (min-width: 2600px) {
+    body { zoom: 1.5; }
   }
 
 /* ---------- Wider, neat hero on desktop ---------- */
@@ -473,10 +480,65 @@
   .hero-wrap .wrap.hero {
     max-width: 1420px;     /* wider than the 1180px box, but still contained */
   }
+  .hero {
+    grid-template-columns: 1.25fr .75fr;  /* photo column gets more room */
+    gap: 72px;
+  }
   h1.headline {
-    font-size: clamp(42px, 5.4vw, 100px);  /* a bit bigger, not tower-tall */
+    font-size: clamp(42px, 4.7vw, 88px);  /* sized so each written line stays on one line */
   }
   .hero-visual {
-    max-width: 400px;      /* photo grows a little, keeps its card look */
+    max-width: 440px;      /* photo grows a little, keeps its card look */
+    justify-self: end;     /* anchor toward the right so the hero doesn't lean left */
+    margin-right: 48px;    /* ...but nudged back in a bit so it doesn't hug the edge */
+    width: 100%;
   }
+}
+
+/* ---------- Hero entrance motion ----------
+   Sequence on load: headline rises -> photo slides in from the right ->
+   marker highlight sweeps under "markets" -> CTA buttons cascade in.
+   All use `backwards` fill so natural styles (and hover lifts) take over
+   once each animation ends; prefers-reduced-motion shows everything static. */
+@keyframes heroRise { from { opacity:0; transform:translateY(26px); } to { opacity:1; transform:none; } }
+@keyframes heroPhotoIn { from { opacity:0; transform:translateX(30px) scale(.97); } to { opacity:1; transform:none; } }
+@keyframes markerSweep { from { background-size:0% 42%; } to { background-size:100% 42%; } }
+.js-ready .hero-copy.in .headline { animation:heroRise .85s cubic-bezier(.2,.7,.3,1) backwards; }
+.js-ready .hero-copy.in .cta-row .btn { animation:heroRise .6s cubic-bezier(.2,.7,.3,1) backwards; }
+.js-ready .hero-copy.in .cta-row .btn:nth-child(1) { animation-delay:.35s; }
+.js-ready .hero-copy.in .cta-row .btn:nth-child(2) { animation-delay:.47s; }
+.js-ready .hero-copy.in .cta-row .btn:nth-child(3) { animation-delay:.59s; }
+.js-ready .hero-visual.in .hero-photo { animation:heroPhotoIn .9s cubic-bezier(.2,.7,.3,1) .25s backwards; }
+/* marker highlight behind the italic word in the headline */
+h1.headline em {
+  background:linear-gradient(var(--accent-soft), var(--accent-soft)) no-repeat 0 74%;
+  background-size:100% 42%;
+  padding:0 .05em; margin:0 -.05em;
+}
+.js-ready .hero-copy.in .headline em { animation:markerSweep .55s cubic-bezier(.2,.7,.3,1) .7s backwards; }
+
+/* ---------- Editorial two-column sections on desktop ----------
+   The section title lives in a sticky left rail; the content fills the
+   right column, so the ~700px text width becomes the design instead of
+   leaving a big empty right side. Below 1100px everything falls back to
+   the original stacked (mobile) layout untouched. */
+@media (min-width: 1100px) {
+  .block {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    column-gap: 64px;
+    align-items: start;
+    padding: 56px 0;
+  }
+  .block > * { grid-column: 2; min-width: 0; }
+  .block > .kicker {
+    grid-column: 1;
+    grid-row: 1 / span 40;   /* rail spans the whole section height */
+    position: sticky; top: 96px;
+    margin-bottom: 0;
+    font-size: 34px; line-height: 1.3;
+  }
+  .block .sec-note { margin-top: 0; }
+  /* flip tiles read better 2x2 in the narrower content column */
+  .dir-grid { grid-template-columns: 1fr 1fr; }
 }

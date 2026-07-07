@@ -38,6 +38,21 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
 
+  /* ---------- Per-item reveal — timeline entries and project cards pop in
+     one by one as each scrolls into view. Items that appear together get a
+     small stagger so they cascade instead of landing all at once. ---------- */
+  const itemObs = new IntersectionObserver(function(entries){
+    let i = 0;
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        e.target.style.animationDelay = (i++ * 0.11) + 's';
+        e.target.classList.add('item-in');
+        itemObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.timeline .node, .projects .proj').forEach(function(el){ itemObs.observe(el); });
+
   /* ---------- Contact form -> Google Sheet (or mailto fallback if URL not set) ---------- */
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
