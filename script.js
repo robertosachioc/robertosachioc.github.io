@@ -31,6 +31,18 @@
     a.addEventListener('click', function () { panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); });
   });
 
+  /* Close mobile panel on Esc or tap outside */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && panel.classList.contains('open')) {
+      panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('click', function (e) {
+    if (panel.classList.contains('open') && !panel.contains(e.target) && !hamburger.contains(e.target)) {
+      panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
   /* ---------- Gentle scroll reveal (progressive enhancement — visible without JS) ---------- */
   document.documentElement.classList.add('js-ready');
   const obs = new IntersectionObserver(function (entries) {

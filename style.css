@@ -245,6 +245,8 @@
   }
 
   .theme-btn {
+    flex-shrink: 0;
+    position: relative;
     cursor: pointer;
     border: 1px solid var(--accent-soft);
     background: transparent;
@@ -322,7 +324,7 @@
 
   /* ---------- Hero ---------- */
   header.hero-wrap {
-    min-height: calc(100svh - 64px);
+    min-height: min(calc(100svh - 64px), 760px);
     display: flex;
     align-items: center;
     padding: 24px 0 40px;
@@ -1161,7 +1163,7 @@
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width:900px) {
+  @media (max-width:1080px) {
     .nav-links {
       display: none;
     }
@@ -2033,4 +2035,13 @@
     .dir-grid {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  /* Bigger touch targets (44px+) for the small nav controls — invisible, no layout change */
+  .hamburger { position: relative; }
+  .theme-btn::after,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
   }
