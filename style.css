@@ -1156,10 +1156,18 @@
   }
 
   a:focus-visible,
-  .btn:focus-visible {
+  .btn:focus-visible,
+  .dir-card:focus-visible,
+  .nav-links a:focus-visible,
+  .see-all-btn:focus-visible,
+  .w-arrow:focus-visible,
+  form.contact-form input:focus-visible,
+  form.contact-form textarea:focus-visible,
+  form.contact-form button:focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
+    box-shadow: 0 0 0 2px var(--bg);
   }
 
   /* ---------- Responsive ---------- */
