@@ -16,32 +16,36 @@
   let savedTheme = 'light';
   try { savedTheme = localStorage.getItem('theme') || 'light'; } catch (e) { }
   applyTheme(savedTheme);
-  themeBtn.addEventListener('click', function () {
-    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-  });
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  }
 
   /* ---------- Mobile menu ---------- */
   const hamburger = document.getElementById('hamburger');
   const panel = document.getElementById('mobilePanel');
-  hamburger.addEventListener('click', function () {
-    const open = panel.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  panel.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); });
-  });
+  if (hamburger && panel) {
+    hamburger.addEventListener('click', function () {
+      const open = panel.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    panel.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); });
+    });
 
-  /* Close mobile panel on Esc or tap outside */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && panel.classList.contains('open')) {
-      panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
-    }
-  });
-  document.addEventListener('click', function (e) {
-    if (panel.classList.contains('open') && !panel.contains(e.target) && !hamburger.contains(e.target)) {
-      panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
-    }
-  });
+    /* Close mobile panel on Esc or tap outside */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) {
+        panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('click', function (e) {
+      if (panel.classList.contains('open') && !panel.contains(e.target) && !hamburger.contains(e.target)) {
+        panel.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   /* ---------- Gentle scroll reveal (progressive enhancement — visible without JS) ---------- */
   document.documentElement.classList.add('js-ready');
@@ -68,46 +72,55 @@
   /* ---------- Contact form -> Google Sheet (or mailto fallback if URL not set) ---------- */
   const form = document.getElementById('contactForm');
   const formNote = document.getElementById('formNote');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const name = document.getElementById('cf-name').value;
-    const email = document.getElementById('cf-email').value;
-    const company = document.getElementById('cf-company').value;
-    const message = document.getElementById('cf-message').value;
-    const btn = form.querySelector('button[type="submit"]');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nameInput = document.getElementById('cf-name');
+      const emailInput = document.getElementById('cf-email');
+      const companyInput = document.getElementById('cf-company');
+      const messageInput = document.getElementById('cf-message');
+      const name = nameInput ? nameInput.value : '';
+      const email = emailInput ? emailInput.value : '';
+      const company = companyInput ? companyInput.value : '';
+      const message = messageInput ? messageInput.value : '';
+      const btn = form.querySelector('button[type="submit"]');
 
-    if (SHEET_WEBAPP_URL) {
-      btn.disabled = true; btn.textContent = 'Sending…';
-      const data = new FormData();
-      data.append('name', name); data.append('email', email);
-      data.append('company', company); data.append('message', message);
-      fetch(SHEET_WEBAPP_URL, { method: 'POST', mode: 'no-cors', body: data })
-        .then(function () {
-          const firstName = (name || '').trim().split(' ')[0];
-          const ok = document.createElement('div');
-          ok.className = 'form-success';
-          ok.innerHTML = '<div class="fs-check">✓</div>' +
-            '<h3>Message sent' + (firstName ? ', ' + firstName : '') + '!</h3>' +
-            '<p>I\'ve received your message and will get back to you soon.</p>' +
-            '<button type="button" class="fs-again">Send another message</button>';
-          form.style.display = 'none';
-          form.parentNode.insertBefore(ok, form);
-          ok.querySelector('.fs-again').addEventListener('click', function () {
-            ok.remove(); form.reset();
-            btn.disabled = false; btn.textContent = 'Send message →';
-            form.style.display = '';
+      if (SHEET_WEBAPP_URL) {
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+        const data = new FormData();
+        data.append('name', name); data.append('email', email);
+        data.append('company', company); data.append('message', message);
+        fetch(SHEET_WEBAPP_URL, { method: 'POST', mode: 'no-cors', body: data })
+          .then(function () {
+            const firstName = (name || '').trim().split(' ')[0];
+            const ok = document.createElement('div');
+            ok.className = 'form-success';
+            ok.innerHTML = '<div class="fs-check">✓</div>' +
+              '<h3>Message sent' + (firstName ? ', ' + firstName : '') + '!</h3>' +
+              '<p>I\'ve received your message and will get back to you soon.</p>' +
+              '<button type="button" class="fs-again">Send another message</button>';
+            form.style.display = 'none';
+            if (form.parentNode) form.parentNode.insertBefore(ok, form);
+            const againBtn = ok.querySelector('.fs-again');
+            if (againBtn) {
+              againBtn.addEventListener('click', function () {
+                ok.remove(); form.reset();
+                if (btn) { btn.disabled = false; btn.textContent = 'Send message →'; }
+                form.style.display = '';
+              });
+            }
+          })
+          .catch(function () {
+            if (btn) { btn.disabled = false; btn.textContent = 'Send message →'; }
+            if (formNote) formNote.textContent = "Couldn't send, please email me directly instead.";
           });
-        })
-        .catch(function () {
-          btn.disabled = false; btn.textContent = 'Send message →';
-          if (formNote) formNote.textContent = "Couldn't send, please email me directly instead.";
-        });
-    } else {
-      const subject = encodeURIComponent('Portfolio contact from ' + name);
-      const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')' + (company ? '\n' + company : ''));
-      window.location.href = 'mailto:robertosc1178@gmail.com?subject=' + subject + '&body=' + body;
-    }
-  });
+      } else {
+        const subject = encodeURIComponent('Portfolio contact from ' + name);
+        const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')' + (company ? '\n' + company : ''));
+        window.location.href = 'mailto:robertosc1178@gmail.com?subject=' + subject + '&body=' + body;
+      }
+    });
+  }
 
   /* ---------- Active nav highlight while scrolling ---------- */
   const navAs = document.querySelectorAll('.nav-links a[href^="#"]');
@@ -122,10 +135,12 @@
 
   /* ---------- Back to top ---------- */
   const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', function () {
-    toTop.classList.toggle('show', window.scrollY > 600);
-  }, { passive: true });
-  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  if (toTop) {
+    window.addEventListener('scroll', function () {
+      toTop.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+    toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
 
   /* ---------- "See all projects" — only kicks in when you have more than 4 project cards ---------- */
   (function () {
