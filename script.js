@@ -95,20 +95,28 @@
             const firstName = (name || '').trim().split(' ')[0];
             const ok = document.createElement('div');
             ok.className = 'form-success';
-            ok.innerHTML = '<div class="fs-check">✓</div>' +
-              '<h3>Message sent' + (firstName ? ', ' + firstName : '') + '!</h3>' +
-              '<p>I\'ve received your message and will get back to you soon.</p>' +
-              '<button type="button" class="fs-again">Send another message</button>';
+            const check = document.createElement('div');
+            check.className = 'fs-check';
+            check.textContent = '✓';
+            const heading = document.createElement('h3');
+            heading.textContent = 'Message sent' + (firstName ? ', ' + firstName : '') + '!';
+            const body = document.createElement('p');
+            body.textContent = "I've received your message and will get back to you soon.";
+            const againBtn = document.createElement('button');
+            againBtn.type = 'button';
+            againBtn.className = 'fs-again';
+            againBtn.textContent = 'Send another message';
+            ok.appendChild(check);
+            ok.appendChild(heading);
+            ok.appendChild(body);
+            ok.appendChild(againBtn);
             form.style.display = 'none';
             if (form.parentNode) form.parentNode.insertBefore(ok, form);
-            const againBtn = ok.querySelector('.fs-again');
-            if (againBtn) {
-              againBtn.addEventListener('click', function () {
-                ok.remove(); form.reset();
-                if (btn) { btn.disabled = false; btn.textContent = 'Send message →'; }
-                form.style.display = '';
-              });
-            }
+            againBtn.addEventListener('click', function () {
+              ok.remove(); form.reset();
+              if (btn) { btn.disabled = false; btn.textContent = 'Send message →'; }
+              form.style.display = '';
+            });
           })
           .catch(function () {
             if (btn) { btn.disabled = false; btn.textContent = 'Send message →'; }
